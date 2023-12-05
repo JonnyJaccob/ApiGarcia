@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 8083 
+const PORT = 8083  || process.env.PORT ;
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUI = require('swagger-ui-express');
 const express = require('express');
