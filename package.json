@@ -4,9 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "start": "node index.js",
+    "build": "npm install"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.6.5",
+    "path": "^0.12.7",
+    "redoc-express": "^2.1.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-themes": "^1.2.30",
+    "swagger-ui-express": "^5.0.0"
+  }
 }
