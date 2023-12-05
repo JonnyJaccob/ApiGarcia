@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha",
     "start": "node index.js",
-    "build": "npm install"
+    "build": "npm install",
+    "prod" : "node prod.js"
   },
   "keywords": [],
   "author": "",

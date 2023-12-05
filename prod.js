@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 8083 ;
+const PORT = process.env.PORT ;
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUI = require('swagger-ui-express');
 const express = require('express');
@@ -28,10 +28,10 @@ var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {
 });
 
 const dataDeBase = {
-    host: process.env.HOST ||'localhost' , 
-    user: process.env.USER || 'root',
-    password: process.env.PASSWORD || '',
-    database: process.env.DATABASE || 'ejemplo'
+    host: process.env.HOST  , 
+    user: process.env.USER ,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
 }
 
 /**
