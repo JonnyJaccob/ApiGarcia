@@ -480,7 +480,7 @@ const swaggerOptions = {
     apis: [`${path.join(__dirname,'./prod.js')}`],
     schemes: ["http", "https"],
 };
-swaggerOptions.definition.servers = [{  url: `http://${'https://apigarcia.onrender.com'|| 'localhost'}:${PORT}` }]
+swaggerOptions.definition.servers = [{  url: 'https://apigarcia.onrender.com/' }]
 const options = {
     explorer: true,
     customCss: theme.getBuffer('dark')
