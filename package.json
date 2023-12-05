@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "start": "node index.js",
-    "build": "npm install",
+    "build": "npm install --omit=dev",
     "prod" : "node prod.js"
   },
   "keywords": [],
