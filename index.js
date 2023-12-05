@@ -28,10 +28,10 @@ var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {
 });
 
 const dataDeBase = {
-    host: 'localhost' || process.env.HOST, 
-    user: 'root' || process.env.USER,
-    password: '' || process.env.PASSWORD,
-    database: 'ejemplo' || process.env.DATABASE
+    host: process.env.HOST ||'localhost' , 
+    user: process.env.USER || 'root',
+    password: process.env.PASSWORD || '',
+    database: process.env.DATABASE || 'ejemplo'
 }
 
 /**
