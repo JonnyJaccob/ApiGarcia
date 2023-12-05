@@ -496,6 +496,7 @@ app.use("/api-docs-json",(req, res) =>{
 
 app.get(
     '/api-docs-redoc',
+    cors(), // Agregar el middleware cors aquí
     redoc({
       title: 'API Docs',
       specUrl: '/api-docs-json',
