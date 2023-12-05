@@ -33,7 +33,7 @@ const dataDeBase = {
     password: process.env.PASSWORD,
     database: process.env.DATABASE
 }
-
+console.log(dataDeBase)
 /**
  * @openapi
  * /:
@@ -276,8 +276,6 @@ app.delete("/alumnos/:idUsuario", async (req, resp) => {
         resp.status(500).json({ mensaje: "Error de conexión", tipo: err.message, sql: err.sqlMessage });
     }
 });
-
-
 
 /**
  * @swagger
