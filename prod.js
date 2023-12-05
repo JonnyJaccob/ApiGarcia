@@ -1,4 +1,4 @@
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT || 8883 ;
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUI = require('swagger-ui-express');
 const express = require('express');
@@ -28,10 +28,11 @@ var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {
 });
 
 const dataDeBase = {
-    host: process.env.HOST  , 
-    user: process.env.USER ,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
+    host: process.env.HOST || 'localhost' , 
+    user: process.env.USER || 'root' ,
+    password: process.env.PASSWORD || '',
+    database: process.env.DATABASE || 'ejemplo',
+    port: process.env.PORT || 8083
 }
 console.log(dataDeBase)
 /**
@@ -479,12 +480,13 @@ const swaggerOptions = {
     apis: [`${path.join(__dirname,'./prod.js')}`],
     schemes: ["http", "https"],
 };
-
+swaggerOptions.definition.servers = [{ url: `${process.env.HOSTNAME || 'localhost'}:${PORT}` }]
 const options = {
     explorer: true,
     customCss: theme.getBuffer('dark')
 };
-
+console.log(swaggerOptions)
+console.log(swaggerOptions.definition.servers)
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
      
 app.use("/api-docs",cors(),swaggerUI.serve,swaggerUI.setup(swaggerDocs,options));
