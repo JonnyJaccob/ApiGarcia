@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 8883 ;
+const PORT = 8883 ;
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUI = require('swagger-ui-express');
 const express = require('express');
@@ -32,7 +32,7 @@ const dataDeBase = {
     user: process.env.USER || 'root' ,
     password: process.env.PASSWORD || '',
     database: process.env.DATABASE || 'ejemplo',
-    port: process.env.PORT || 8083
+    port: process.env.PORT || 3306
 }
 console.log(dataDeBase)
 /**
