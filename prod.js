@@ -476,7 +476,7 @@ defObj.info.description = read
 
 const swaggerOptions = {
     definition: defObj,
-    apis: [`${path.join(__dirname,'./index.js')}`],
+    apis: [`${path.join(__dirname,'./prod.js')}`],
     schemes: ["http", "https"],
 };
 
