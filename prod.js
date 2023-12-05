@@ -480,13 +480,13 @@ const swaggerOptions = {
     apis: [`${path.join(__dirname,'./prod.js')}`],
     schemes: ["http", "https"],
 };
-swaggerOptions.definition.servers = [{ url: `${process.env.HOSTNAME || 'localhost'}:${PORT}` }]
+swaggerOptions.definition.servers = [{  url: `http://${process.env.HOSTNAME || 'localhost'}:${PORT}` }]
 const options = {
     explorer: true,
     customCss: theme.getBuffer('dark')
 };
-console.log(swaggerOptions)
-console.log(swaggerOptions.definition.servers)
+//console.log(swaggerOptions)
+//console.log("server: ",swaggerOptions.definition.servers)
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
      
 app.use("/api-docs",cors(),swaggerUI.serve,swaggerUI.setup(swaggerDocs,options));
