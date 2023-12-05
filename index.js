@@ -10,6 +10,10 @@ const { SwaggerTheme } = require('swagger-themes');
 const redoc = require('redoc-express');
 var mysql = require('mysql2/promise');
 
+const cors = require('cors');
+app.use(cors());
+
+
 app.use(express.json())
 
 const theme = new SwaggerTheme('v3');
