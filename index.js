@@ -285,7 +285,7 @@ app.delete("/alumnos/:idUsuario", async (req, resp) => {
  *     description: Actualiza un alumno específico según su ID.
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: IdUsuario
  *         required: true
  *         description: ID del alumno a actualizar parcialmente.
  *         schema:
