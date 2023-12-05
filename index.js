@@ -488,7 +488,7 @@ const options = {
 
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
      
-app.use("/api-docs",swaggerUI.serve,swaggerUI.setup(swaggerDocs,options));
+app.use("/api-docs",cors(),swaggerUI.serve,swaggerUI.setup(swaggerDocs,options));
 
 app.use("/api-docs-json",(req, res) =>{
     res.json(swaggerDocs)
