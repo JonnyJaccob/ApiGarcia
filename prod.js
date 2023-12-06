@@ -69,12 +69,6 @@ app.get('/hello', (req, res) => {
  *               - id: 2
  *                 nombre: "Maria"
  *                 apellido : "Rodriguez"
- *       404:
- *         description: No se encontraron alumnos.
- *         content:
- *           application/json:
- *             example:
- *               mensaje: "No hay alumnos registrados"
  *       500:
  *         description: Error al procesar la solicitud.
  *         content:
@@ -89,8 +83,8 @@ app.get('/alumnos/',async (req,res) =>{
         const conexion = await mysql.createConnection(dataDeBase);
         const [rows, fields] = await conexion.query('select * from nombre ');
         if(rows.length == 0){
-            res.status(404);
-            res.json({mensaje:"Usuario no existe"})
+            res.status(200);
+            res.json({mensaje:"La lista esta vacia"})
         }else{
             res.json(rows);
         }
@@ -481,7 +475,7 @@ const swaggerOptions = {
     apis: [`${path.join(__dirname,'./prod.js')}`],
     schemes: ["http", "https"],
 };
-swaggerOptions.definition.servers = [{  url: 'https://apigarcia-production.up.railway.app' || 'localhost'}]
+swaggerOptions.definition.servers = [{  url: `${ process.env.URL || 'localhost'}`}]
 const options = {
     explorer: true,
     customCss: theme.getBuffer('dark')
