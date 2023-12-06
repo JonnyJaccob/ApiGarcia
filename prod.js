@@ -481,7 +481,7 @@ const swaggerOptions = {
     apis: [`${path.join(__dirname,'./prod.js')}`],
     schemes: ["http", "https"],
 };
-swaggerOptions.definition.servers = [{  url: 'https://apigarcia.onrender.com/' }]
+swaggerOptions.definition.servers = [{  url: 'https://apigarcia-production.up.railway.app' || 'localhost'}]
 const options = {
     explorer: true,
     customCss: theme.getBuffer('dark')
